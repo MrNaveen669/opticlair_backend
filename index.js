@@ -20,20 +20,20 @@ app.use("/cart", cartRouter);
 app.use("/sampleproduct", sampleProductRouter);
 app.use("/wishlist", wishlistRoutes);
 
-// ✅ Serve static files from React frontend build
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+// // ✅ Serve static files from React frontend build
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-// ✅ For any unknown route, serve React index.html (for React Router support)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
-});
+// // ✅ For any unknown route, serve React index.html (for React Router support)
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+// });
 
-//access admin 
-app.use("/admin", express.static(path.join(__dirname, "../admin/build")));
+// //access admin 
+// app.use("/admin", express.static(path.join(__dirname, "../admin/build")));
 
-app.get("/admin/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../admin/build", "index.html"));
-});
+// app.get("/admin/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../admin/build", "index.html"));
+// });
 
 // START SERVER
 app.listen(process.env.PORT, async () => {
