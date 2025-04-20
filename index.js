@@ -23,12 +23,12 @@ app.use("/wishlist", wishlistRoutes);
 app.use("/payment", paymentRouter);// Add the payment routes
 
 // ✅ Serve static files from React frontend build
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-// ✅ For any unknown route, serve React index.html (for React Router support)
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
-});
+// // ✅ For any unknown route, serve React index.html (for React Router support)
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+// });
 
 // START SERVER
 app.listen(process.env.port, async () => {
