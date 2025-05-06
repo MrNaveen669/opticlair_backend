@@ -70,7 +70,8 @@ app.use("/payment", paymentRouter);// Add the payment routes
 // });
 
 // START SERVER
-app.listen(process.env.port, async () => {
+
+app.listen(process.env.PORT, async () => {
   try {
     await connection;
     console.log("✅ Connected to the DB");
