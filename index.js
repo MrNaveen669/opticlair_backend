@@ -46,6 +46,7 @@ const { cartRouter } = require("./routes/cart.routes");
 const wishlistRoutes = require("./routes/wishlist.routes");
 const { sampleProductRouter } = require("./routes/sampleProduct.routes");
 const { paymentRouter } = require("./routes/payment.routes");
+const PORT = process.env.PORT || 5000;
 
 require("dotenv").config();
 const cors = require("cors");
@@ -68,15 +69,17 @@ app.use("/payment", paymentRouter);// Add the payment routes
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../opticlair/build", "index.html"));
 // });
+app.get('/', (req, res) => {
+  res.send('API IS Working')
+})
 
 // START SERVER
-
-app.listen(process.env.PORT, async () => {
+app.listen(PORT, async () => {
   try {
     await connection;
     console.log("✅ Connected to the DB");
   } catch (err) {
     console.error("❌ Trouble connecting to the DB", err);
   }
-  console.log(`🚀 Server running on port ${process.env.PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
