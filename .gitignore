@@ -1,0 +1,6 @@
+# dependencies
+/node_modules
+.env
+*.zip
+backend.zip
+backend1.zip
