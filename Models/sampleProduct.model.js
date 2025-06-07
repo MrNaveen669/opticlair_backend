@@ -28,7 +28,10 @@ const sampleProductSchema = new mongoose.Schema({
     frameMaterial: { type: String }, // Frame material
     lensMaterial: { type: String }, // Lens material
     features: [{ type: String }], // Product features
-    discount: { type: String, default: "0" } // Discount percentage
+    discount: { type: String, default: "0" }, // Discount percentage
+    brand: { type: String }, // Brand of the product
+    color: { type: String }, // Color of the product,
+    power: { type: String }, // Power of the lens
 
 
     

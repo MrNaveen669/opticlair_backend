@@ -9,7 +9,8 @@ const { sampleProductRouter } = require("./routes/sampleProduct.routes");
 const { paymentRouter } = require("./routes/payment.routes");
 const orderRouters = require("./routes/orderRouter"); // Import the order router
 const adminRoutes = require("./routes/admin"); // Import the order router
-const enquiryRoutes = require('./routes/enquiryRoutes'); 
+const enquiryRoutes = require('./routes/enquiryRoutes');
+const appointmentRouter = require("./routes/appointment.router"); 
 
 
 
@@ -29,6 +30,7 @@ app.use("/payment", paymentRouter);
 app.use("/orders", orderRouters); // Add the order routes
 app.use('/admin', adminRoutes);
 app.use('/enquiry', enquiryRoutes);
+app.use("/appointments", appointmentRouter); 
 
 
 // // ✅ Serve static files from React frontend build
